@@ -13,7 +13,7 @@ if (! defined('IN_MYBB')) {
 
 // constants
 define('POST_DISPLAY_LIMIT_ID', 'post_display_limit');
-define('POST_DISPLAY_LIMIT_NAME', 'Mesaj Görüntüleme Limiti');
+define('POST_DISPLAY_LIMIT_NAME', 'İleti Görüntüleme Limiti');
 define('POST_DISPLAY_LIMIT_VERSION', '1.0.0');
 
 // hooks
@@ -23,7 +23,7 @@ function post_display_limit_info()
 {
     return [
         'name'          => POST_DISPLAY_LIMIT_NAME,
-        'description'   => 'Ziyaretçiler için mesaj görüntüleme limiti belirlemenizi sağlar. (Limit aşıldığında giriş ya da kayıt olmalarını gerektirir.)',
+        'description'   => 'Ziyaretçiler için ileti görüntüleme limiti belirlemenizi sağlar. (Limit aşıldığında giriş ya da kayıt olmalarını gerektirir.)',
         'website'       => 'https://mybbcode.com/',
         'author'        => 'tedem',
         'authorsite'    => 'https://wa.me/905300641197',
@@ -88,8 +88,8 @@ function post_display_limit_install()
     // _limit
     $setting = [
         "name"          => $db->escape_string("{$info['codename']}_limit"),
-        "title"         => $db->escape_string('Mesaj Görüntüleme Limiti'),
-        "description"   => $db->escape_string('Ziyaretçinin görüntüleyebileceği en fazla mesaj sayısını belirtin. (Varsayılan: 5)'),
+        "title"         => $db->escape_string('İleti Görüntüleme Limiti'),
+        "description"   => $db->escape_string('Ziyaretçinin görüntüleyebileceği en fazla ileti sayısını belirtin. (Varsayılan: 5)'),
         "optionscode"   => "text",
         "value"         => 5,
         "disporder"     => 2,
@@ -101,16 +101,16 @@ function post_display_limit_install()
     // _text
     $setting = [
         "name"          => $db->escape_string("{$info['codename']}_text"),
-        "title"         => $db->escape_string('Limit Mesajı'),
+        "title"         => $db->escape_string('Limit Metni'),
         "description"   => $db->escape_string('
-<div>Görüntülenebilecek en fazla mesaj sayısı aşıldıktan sonra ziyaretçiye gösterilecek mesajı belirleyin.</div>
-<div>Aşağıdaki belirlenmiş parametleri mesaj içerisinde kullanabilirsiniz;</div>
+<div>Görüntülenebilecek en fazla ileti sayısı aşıldıktan sonra ziyaretçiye gösterilecek metni belirleyin.</div>
+<div>Aşağıdaki belirlenmiş parametleri metin içerisinde kullanabilirsiniz;</div>
 <div><b>[LIMIT]:</b> Belirlediğiniz görüntüleme limitidir.</div>
 <div><b>[LOGIN]:</b> Giriş bağlantısı oluşturur.</div>
 <div><b>[REGISTER]:</b> Kayıt bağlantısı oluşturur.</div>'),
         "optionscode"   => "textarea",
         "value"         => $db->escape_string('
-<div>Merhaba Ziyaretçi! Sizin için belirlediğimiz en fazla ([LIMIT]) mesaj görüntüleme sayısına ulaştığınızı üzülerek belirmek isteriz.</div>
+<div>Merhaba Ziyaretçi! Sizin için belirlediğimiz en fazla ([LIMIT]) ileti (konu / yorum) görüntüleme sayısına ulaştığınızı üzülerek belirmek isteriz.</div>
 <div>Üzülmeyin; topluluğumuza <b>[LOGIN]</b> yaparak ya da <b>[REGISTER]</b> olarak tüm içeriklerimizden hiç bir kısıtlama olmadan yararlanabilirsiniz.</div>'),
         "disporder"     => 3,
         "gid"           => $gid,
