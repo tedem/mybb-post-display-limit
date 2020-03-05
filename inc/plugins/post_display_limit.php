@@ -112,7 +112,7 @@ function post_display_limit_install()
 <div><b>[REGISTER]:</b> Kayıt bağlantısı oluşturur.</div>'),
         "optionscode"   => "textarea",
         "value"         => $db->escape_string('
-<div>Merhaba Ziyaretçi! Sizin için belirlediğimiz en fazla ([LIMIT]) ileti (konu / yorum) görüntüleme sayısına ulaştığınızı üzülerek belirmek isteriz.</div>
+<div>Merhaba Ziyaretçi! Sizin için belirlediğimiz en fazla ([LIMIT]) ileti (konu / yorum) görüntüleme sayısına ulaştığınızı üzülerek belirtmek isteriz.</div>
 <div>Üzülmeyin; topluluğumuza <b>[LOGIN]</b> yaparak ya da <b>[REGISTER]</b> olarak tüm içeriklerimizden hiç bir kısıtlama olmadan yararlanabilirsiniz.</div>'),
         "disporder"     => 3,
         "gid"           => $gid,
