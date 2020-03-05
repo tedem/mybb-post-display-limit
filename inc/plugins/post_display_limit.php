@@ -17,7 +17,9 @@ define('POST_DISPLAY_LIMIT_NAME', 'İleti Görüntüleme Limiti');
 define('POST_DISPLAY_LIMIT_VERSION', '1.0.0');
 
 // hooks
-$plugins->add_hook("showthread_start", "post_display_limit_run");
+if (! defined('IN_ADMINCP')) {
+    $plugins->add_hook("showthread_start", "post_display_limit_run");
+}
 
 function post_display_limit_info()
 {
